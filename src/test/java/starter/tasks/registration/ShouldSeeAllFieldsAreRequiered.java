@@ -1,0 +1,19 @@
+package starter.tasks.registration;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.targets.Target;
+import starter.ui.registration.UiRegisterUserForm;
+
+public class ShouldSeeAllFieldsAreRequiered implements Task {
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+
+        actor.attemptsTo(
+                Ensure.that(UiRegisterUserForm.ALERT_ALL_REQUIRED_FIELDS).text().contains("Por favor diligencie todos los campos")
+        );
+
+    }
+}
